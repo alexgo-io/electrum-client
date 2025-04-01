@@ -6,7 +6,6 @@
 	},
 	"description": "Electrum protocol client for Node.js",
 	"keywords": ["bitcoin", "electrum", "electrumx"],
-	"type": "module",
 	"exports": {
 		".": {
 			"import": "./dist/index.js",
