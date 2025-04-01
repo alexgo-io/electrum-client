@@ -8,8 +8,8 @@ import type {
   PersistencePolicy,
   Protocol,
 } from "./types";
-import type { TransactionVerbose } from "./types/TransactionVerbose.js";
-import type { MempoolTransaction } from "./types/mempoolTransaction.js";
+import type { TransactionVerbose } from "./types/transactionVerbose.js";
+import type { MempoolTransaction } from "./types/mempoolTransaction";
 
 export class ElectrumClient extends Client {
   private readonly onConnectCallback:
@@ -285,6 +285,9 @@ export class ElectrumClient extends Client {
 
   blockchainScripthash_getHistoryBatch(scripthashes: string[]) {
     return this.requestBatch("blockchain.scripthash.get_history", scripthashes);
+  }
+  blockchainTransaction_get(tx_hash: string, verbose = false) {
+    return this.request("blockchain.transaction.get", [tx_hash, verbose]);
   }
 
   blockchainScripthash_getMempool(
