@@ -8,7 +8,7 @@ import type {
   PersistencePolicy,
   Protocol,
 } from "./types";
-import type { TransactionVerbose } from "./types/transactionVerbose";
+import type { TransactionVerbose } from "./types/TransactionVerbose";
 import type { MempoolTransaction } from "./types/mempoolTransaction";
 
 export class ElectrumClient extends Client {
